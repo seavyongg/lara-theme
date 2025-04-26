@@ -25,7 +25,7 @@
     <link href="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href=" {{ url('frontend/assets/css/main.css') }}" rel="stylesheet">
+    <link href=" {{ asset('frontend/assets/css/main.css') }}" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: Company
@@ -41,7 +41,7 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <a href="{{route('index')}}" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1 class="sitename">Company</h1><span>.</span>
@@ -49,12 +49,14 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>
-                <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <li><a href="{{ route('index') }}" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="{{ route('about') }}"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li><a href="{{ route('team') }}">Team</a></li>
+                        <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">Deep Dropdown 1</a></li>
                                 <li><a href="#">Deep Dropdown 2</a></li>
@@ -65,14 +67,15 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+                <li><a href="{{ route('pricing') }}">Pricing</a></li>
+                <li><a href="{{ route('blog') }}">Blog</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
 
         <div class="header-social-links">
             <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
@@ -96,7 +99,7 @@
                 <div class="container">
                     <h2>We are professional</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="about.html" class="btn-get-started">Read More</a>
+                    <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
                 </div>
             </div><!-- End Carousel Item -->
 
@@ -105,7 +108,7 @@
                 <div class="container">
                     <h2>At vero eos et accusamus</h2>
                     <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-                    <a href="about.html" class="btn-get-started">Read More</a>
+                    <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
                 </div>
             </div><!-- End Carousel Item -->
 
@@ -114,7 +117,7 @@
                 <div class="container">
                     <h2>Temporibus autem quibusdam</h2>
                     <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-                    <a href="about.html" class="btn-get-started">Read More</a>
+                    <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
                 </div>
             </div><!-- End Carousel Item -->
 
@@ -511,8 +514,7 @@
             <!-- You can delete the links only if you've purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
-        </div>
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon</div>
     </div>
 
 </footer>

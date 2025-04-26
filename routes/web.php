@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/about', function () {
     return view('about');
@@ -14,15 +15,18 @@ Route::get('/about', function () {
 Route::get('/services', function () {
     return view('services');
 })->name('services');
+Route::get('/service-details', function () {
+    return view('services-details');
+})->name('services-details');
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
-Route::get('/blog-single', function () {
-    return view('blog-single');
-})->name('blog-single');
+Route::get('/blog-details', function () {
+    return view('blog-details');
+})->name('blog-details');
 Route::get('/portfolio', function () {
     return view('portfolio');
 })->name('portfolio');
