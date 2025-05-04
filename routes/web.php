@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -11,10 +12,8 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+// service management
 
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
 Route::get('/service-details', function () {
     return view('services-details');
 })->name('services-details');
@@ -58,6 +57,22 @@ Route::get('/reset-password', function () {
     return view('auth.passwords.reset');
 })->name('password.request');
 
+//group service
+Route::group(['prefix' => 'services'], function () {
+    Route::get('/', [ServiceController::class, 'index'])->name('services');
+    Route::get('/list', [ServiceController::class, 'list'])->name('services.list');
+    //create
+    Route::get('/create', [ServiceController::class, 'create'])->name('services.create');
+    //store
+    Route::post('/store', [ServiceController::class, 'store'])->name('services.store');
+    //edit
+    Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('services.edit');
+    //update
+    Route::put('/update/{id}', [ServiceController::class, 'update'])->name('services.update');
+    //destroy
+    Route::delete('/destroy/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
+
+});
 
 // Add similar routes for all other pages
 Route::get('/dashboard', function () {
