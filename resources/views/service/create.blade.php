@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="mb-4">
-                                <label for="image" class="form-label fw-semibold">Icon Class</label>
+                                <label for="image" class="form-label fw-semibold">Image</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control rounded-end-3 @error('image') is-invalid @enderror"
                                            id="image" name="image" value="{{ old('image') }}" placeholder="e.g. bi bi-eye" required>
